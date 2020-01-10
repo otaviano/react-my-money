@@ -7,7 +7,7 @@ const CORS  = require('./cors')
 const queryParser  = require('express-query-int')
 
 server.use(bodyParser.urlencoded( { extended: true } ))
-server.use(bodyParser.json({type:'application/vnd.api+json'}));
+server.use(bodyParser.json({type:'application/json'}));
 server.use(CORS)
 server.use(queryParser())
 

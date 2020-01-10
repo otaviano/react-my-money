@@ -5,16 +5,16 @@ module.exports = (req, resp, next) => {
 
     if(bundle.errors) {
         const errors = parseErrors(bundle.errors)
-        resp.status(500).json({errors})
-
-    } else next()
+        resp.status(500).json({ errors })
+    } else 
+        next()
 }
 
 
 const parseErrors = p => {
     const errors = []
 
-    _forIn(p, err => errors.push(err.message))
+    _.forIn(p, err => errors.push(err.message))
 
     return errors
 }
